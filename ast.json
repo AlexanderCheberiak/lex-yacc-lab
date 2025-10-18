@@ -1,0 +1,81 @@
+{
+  "name": "FUNCTION_DEF (main)",
+  "type": "FUNCTION_DEF",
+  "data_type": "int",
+  "value": "main",
+  "children": [
+    {
+  "name": "VARIABLE_DEF (x)",
+  "type": "VARIABLE_DEF",
+  "data_type": "int",
+  "value": "x",
+  "children": [
+    {
+  "name": "INTEGER_LITERAL (5)",
+  "type": "INTEGER_LITERAL",
+  "data_type": "int",
+  "value": "5",
+  "children": []
+},
+    {
+  "name": "VARIABLE_DEF (y)",
+  "type": "VARIABLE_DEF",
+  "data_type": "int",
+  "value": "y",
+  "children": [
+    {
+  "name": "INTEGER_LITERAL (10)",
+  "type": "INTEGER_LITERAL",
+  "data_type": "int",
+  "value": "10",
+  "children": []
+},
+    {
+  "name": "VARIABLE_DEF (sum)",
+  "type": "VARIABLE_DEF",
+  "data_type": "int",
+  "value": "sum",
+  "children": [
+    {
+  "name": "BINARY_OP",
+  "type": "BINARY_OP",
+  "data_type": "int",
+  "children": [
+    {
+  "name": "VARIABLE_REF (x)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "x",
+  "children": []
+},
+    {
+  "name": "VARIABLE_REF (y)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "y",
+  "children": []
+}
+  ]
+},
+    {
+  "name": "RETURN_STMT",
+  "type": "RETURN_STMT",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "VARIABLE_REF (sum)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "sum",
+  "children": []
+}
+  ]
+}
+  ]
+}
+  ]
+}
+  ]
+}
+  ]
+}
