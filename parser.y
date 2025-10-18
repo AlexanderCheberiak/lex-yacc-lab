@@ -43,8 +43,18 @@ int parse_error = 0;
 %type <ast_node> unary_expression multiplicative_expression additive_expression
 %type <ast_node> relational_expression equality_expression logical_and_expression
 %type <ast_node> logical_or_expression assignment_expression
+%type <ast_node> argument_list
 
 %start program
+
+%left OR
+%left AND
+%left EQUAL NOT_EQUAL
+%left LESS GREATER LESS_EQUAL GREATER_EQUAL
+%left PLUS MINUS
+%left MULTIPLY DIVIDE MODULO
+%right NOT
+%right ASSIGN
 
 %%
 
@@ -355,21 +365,13 @@ unary_expression:
 
 postfix_expression:
     primary_expression
-    | postfix_expression LPAREN RPAREN
-    {
-        $$ = create_function_call($1->value, NULL);
-    }
-    | postfix_expression LPAREN assignment_expression RPAREN
+    | postfix_expression LPAREN argument_list RPAREN
     {
         $$ = create_function_call($1->value, $3);
     }
-    | IDENTIFIER LPAREN RPAREN
+    | postfix_expression LPAREN RPAREN
     {
-        $$ = create_function_call($1, NULL);
-    }
-    | IDENTIFIER LPAREN assignment_expression RPAREN
-    {
-        $$ = create_function_call($1, $3);
+        $$ = create_function_call($1->value, NULL);
     }
     | postfix_expression LBRACKET expression RBRACKET
     {
@@ -391,14 +393,6 @@ primary_expression:
     IDENTIFIER
     {
         $$ = create_identifier($1);
-    }
-    | IDENTIFIER LPAREN RPAREN
-    {
-        $$ = create_function_call($1, NULL);
-    }
-    | IDENTIFIER LPAREN assignment_expression RPAREN
-    {
-        $$ = create_function_call($1, $3);
     }
     | INTEGER_LITERAL
     {
@@ -422,6 +416,31 @@ primary_expression:
     | LPAREN expression RPAREN
     {
         $$ = $2;
+    }
+    ;
+
+argument_list:
+    assignment_expression
+    {
+        $$ = create_ast_node(AST_STATEMENT_LIST, TYPE_VOID, NULL);
+        $$->child = $1;
+    }
+    | argument_list COMMA assignment_expression
+    {
+        if ($$ == NULL) {
+            $$ = create_ast_node(AST_STATEMENT_LIST, TYPE_VOID, NULL);
+        }
+        if ($3 != NULL) {
+            if ($$->child == NULL) {
+                $$->child = $3;
+            } else {
+                ASTNode* current = $$->child;
+                while (current->next != NULL) {
+                    current = current->next;
+                }
+                current->next = $3;
+            }
+        }
     }
     ;
 

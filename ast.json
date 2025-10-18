@@ -1,40 +1,109 @@
 {
-  "name": "FUNCTION_DEF (main)",
+  "name": "PROGRAM",
+  "type": "PROGRAM",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "FUNCTION_DEF (max)",
   "type": "FUNCTION_DEF",
   "data_type": "int",
-  "value": "main",
+  "value": "max",
   "children": [
     {
-  "name": "VARIABLE_DEF (x)",
-  "type": "VARIABLE_DEF",
-  "data_type": "int",
-  "value": "x",
+  "name": "IF_STMT",
+  "type": "IF_STMT",
+  "data_type": "void",
   "children": [
     {
-  "name": "INTEGER_LITERAL (5)",
-  "type": "INTEGER_LITERAL",
+  "name": "BINARY_OP",
+  "type": "BINARY_OP",
   "data_type": "int",
-  "value": "5",
+  "children": [
+    {
+  "name": "VARIABLE_REF (a)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "a",
   "children": []
 },
     {
-  "name": "VARIABLE_DEF (y)",
-  "type": "VARIABLE_DEF",
+  "name": "VARIABLE_REF (b)",
+  "type": "VARIABLE_REF",
   "data_type": "int",
-  "value": "y",
-  "children": [
-    {
-  "name": "INTEGER_LITERAL (10)",
-  "type": "INTEGER_LITERAL",
-  "data_type": "int",
-  "value": "10",
+  "value": "b",
   "children": []
+}
+  ]
 },
     {
-  "name": "VARIABLE_DEF (sum)",
-  "type": "VARIABLE_DEF",
+  "name": "BLOCK_STMT",
+  "type": "BLOCK_STMT",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "RETURN_STMT",
+  "type": "RETURN_STMT",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "VARIABLE_REF (a)",
+  "type": "VARIABLE_REF",
   "data_type": "int",
-  "value": "sum",
+  "value": "a",
+  "children": []
+}
+  ]
+}
+  ]
+},
+    {
+  "name": "BLOCK_STMT",
+  "type": "BLOCK_STMT",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "RETURN_STMT",
+  "type": "RETURN_STMT",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "VARIABLE_REF (b)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "b",
+  "children": []
+}
+  ]
+}
+  ]
+}
+  ]
+},
+    {
+  "name": "PARAMETER (a)",
+  "type": "PARAMETER",
+  "data_type": "int",
+  "value": "a",
+  "children": [
+    {
+  "name": "PARAMETER (b)",
+  "type": "PARAMETER",
+  "data_type": "int",
+  "value": "b",
+  "children": []
+}
+  ]
+},
+    {
+  "name": "FUNCTION_DEF (min)",
+  "type": "FUNCTION_DEF",
+  "data_type": "int",
+  "value": "min",
+  "children": [
+    {
+  "name": "IF_STMT",
+  "type": "IF_STMT",
+  "data_type": "void",
   "children": [
     {
   "name": "BINARY_OP",
@@ -58,16 +127,187 @@
   ]
 },
     {
+  "name": "BLOCK_STMT",
+  "type": "BLOCK_STMT",
+  "data_type": "void",
+  "children": [
+    {
   "name": "RETURN_STMT",
   "type": "RETURN_STMT",
   "data_type": "void",
   "children": [
     {
-  "name": "VARIABLE_REF (sum)",
+  "name": "VARIABLE_REF (x)",
   "type": "VARIABLE_REF",
   "data_type": "int",
-  "value": "sum",
+  "value": "x",
   "children": []
+}
+  ]
+}
+  ]
+},
+    {
+  "name": "BLOCK_STMT",
+  "type": "BLOCK_STMT",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "RETURN_STMT",
+  "type": "RETURN_STMT",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "VARIABLE_REF (y)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "y",
+  "children": []
+}
+  ]
+}
+  ]
+}
+  ]
+},
+    {
+  "name": "PARAMETER (x)",
+  "type": "PARAMETER",
+  "data_type": "int",
+  "value": "x",
+  "children": [
+    {
+  "name": "PARAMETER (y)",
+  "type": "PARAMETER",
+  "data_type": "int",
+  "value": "y",
+  "children": []
+}
+  ]
+},
+    {
+  "name": "FUNCTION_DEF (main)",
+  "type": "FUNCTION_DEF",
+  "data_type": "int",
+  "value": "main",
+  "children": [
+    {
+  "name": "VARIABLE_DEF (x)",
+  "type": "VARIABLE_DEF",
+  "data_type": "int",
+  "value": "x",
+  "children": [
+    {
+  "name": "INTEGER_LITERAL (10)",
+  "type": "INTEGER_LITERAL",
+  "data_type": "int",
+  "value": "10",
+  "children": []
+},
+    {
+  "name": "VARIABLE_DEF (y)",
+  "type": "VARIABLE_DEF",
+  "data_type": "int",
+  "value": "y",
+  "children": [
+    {
+  "name": "INTEGER_LITERAL (20)",
+  "type": "INTEGER_LITERAL",
+  "data_type": "int",
+  "value": "20",
+  "children": []
+},
+    {
+  "name": "VARIABLE_DEF (result)",
+  "type": "VARIABLE_DEF",
+  "data_type": "int",
+  "value": "result",
+  "children": [
+    {
+  "name": "FUNCTION_CALL (max)",
+  "type": "FUNCTION_CALL",
+  "data_type": "int",
+  "value": "max",
+  "children": [
+    {
+  "name": "STATEMENT_LIST",
+  "type": "STATEMENT_LIST",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "VARIABLE_REF (x)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "x",
+  "children": [
+    {
+  "name": "VARIABLE_REF (y)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "y",
+  "children": []
+}
+  ]
+}
+  ]
+}
+  ]
+},
+    {
+  "name": "VARIABLE_DEF (minimum)",
+  "type": "VARIABLE_DEF",
+  "data_type": "int",
+  "value": "minimum",
+  "children": [
+    {
+  "name": "FUNCTION_CALL (min)",
+  "type": "FUNCTION_CALL",
+  "data_type": "int",
+  "value": "min",
+  "children": [
+    {
+  "name": "STATEMENT_LIST",
+  "type": "STATEMENT_LIST",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "VARIABLE_REF (x)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "x",
+  "children": [
+    {
+  "name": "VARIABLE_REF (y)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "y",
+  "children": []
+}
+  ]
+}
+  ]
+}
+  ]
+},
+    {
+  "name": "RETURN_STMT",
+  "type": "RETURN_STMT",
+  "data_type": "void",
+  "children": [
+    {
+  "name": "VARIABLE_REF (result)",
+  "type": "VARIABLE_REF",
+  "data_type": "int",
+  "value": "result",
+  "children": []
+}
+  ]
+}
+  ]
+}
+  ]
+}
+  ]
 }
   ]
 }
